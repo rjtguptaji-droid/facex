@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import UploadZone from './components/UploadZone';
 import ResultPanel from './components/ResultPanel';
+import WebcamDetector from './components/WebcamDetector';
 import { detectFaces } from './api/faceDetect';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [mode, setMode] = useState('upload');
 
   const handleImage = (file) => {
     setImage(file);
@@ -38,22 +40,40 @@ function App() {
         <p>AI-powered face detection & emotion analysis</p>
       </header>
 
+      <div className="mode-switcher">
+        <button
+          className={`mode-btn ${mode === 'upload' ? 'active' : ''}`}
+          onClick={() => setMode('upload')}
+        >
+          📤 Upload Image
+        </button>
+        <button
+          className={`mode-btn ${mode === 'live' ? 'active' : ''}`}
+          onClick={() => setMode('live')}
+        >
+          📷 Live Camera
+        </button>
+      </div>
+
       <main className="main">
-        <UploadZone onImage={handleImage} preview={preview} />
-
-        {preview && (
-          <button
-            className={`detect-btn ${loading ? 'loading' : ''}`}
-            onClick={handleDetect}
-            disabled={loading}
-          >
-            {loading ? 'Analysing...' : '⚡ Detect Faces'}
-          </button>
+        {mode === 'upload' ? (
+          <>
+            <UploadZone onImage={handleImage} preview={preview} />
+            {preview && (
+              <button
+                className={`detect-btn ${loading ? 'loading' : ''}`}
+                onClick={handleDetect}
+                disabled={loading}
+              >
+                {loading ? 'Analysing...' : '⚡ Detect Faces'}
+              </button>
+            )}
+            {error && <p className="error">{error}</p>}
+            {results && <ResultPanel results={results} />}
+          </>
+        ) : (
+          <WebcamDetector />
         )}
-
-        {error && <p className="error">{error}</p>}
-
-        {results && <ResultPanel results={results} />}
       </main>
     </div>
   );

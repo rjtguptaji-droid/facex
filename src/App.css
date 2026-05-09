@@ -66,3 +66,34 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 77, 77, 0.2);
 }
+
+.mode-switcher {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.mode-btn {
+  padding: 10px 28px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-btn:hover {
+  border-color: #4f8ef7;
+  color: #4f8ef7;
+}
+
+.mode-btn.active {
+  background: linear-gradient(135deg, #4f8ef7, #a855f7);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(79, 142, 247, 0.3);
+}
