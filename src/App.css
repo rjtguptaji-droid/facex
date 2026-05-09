@@ -1,0 +1,68 @@
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #4f8ef7, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p {
+  color: #555;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.detect-btn {
+  padding: 16px 48px;
+  background: linear-gradient(135deg, #4f8ef7, #a855f7);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 30px rgba(79, 142, 247, 0.4);
+  letter-spacing: 1px;
+}
+
+.detect-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(79, 142, 247, 0.6);
+}
+
+.detect-btn.loading {
+  background: #1a1a1a;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  background: rgba(255, 77, 77, 0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 77, 77, 0.2);
+}

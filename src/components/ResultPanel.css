@@ -1,0 +1,113 @@
+.result-panel {
+  width: 100%;
+}
+
+.result-panel h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #4f8ef7, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.face-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.face-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+
+.face-card:hover {
+  border-color: rgba(79, 142, 247, 0.4);
+  box-shadow: 0 0 30px rgba(79, 142, 247, 0.1);
+  transform: translateY(-2px);
+}
+
+.face-number {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #4f8ef7;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.attr-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.attr-label {
+  color: #555;
+}
+
+.attr-value {
+  font-weight: 600;
+  color: #fff;
+}
+
+.attr-value.emotion {
+  background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(168,85,247,0.15));
+  border: 1px solid rgba(79, 142, 247, 0.3);
+  color: #4f8ef7;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.confidence-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.bar-track {
+  flex: 1;
+  height: 5px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f8ef7, #a855f7);
+  border-radius: 10px;
+  transition: width 0.8s ease;
+}
+
+.confidence-num {
+  color: #555;
+  min-width: 36px;
+  text-align: right;
+}
+
+.no-faces {
+  text-align: center;
+  color: #444;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.no-faces span {
+  font-size: 2.5rem;
+}
